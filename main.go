@@ -3,5 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(getTimeInISOString())
+	timeNow := getTimeInISOString()
+	fmt.Println(timeNow)
+	fmt.Println(get30SecondsFromTime(timeNow))
 }
