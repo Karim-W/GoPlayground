@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 )
 
@@ -24,8 +25,13 @@ func handleTest(c *gin.Context) {
 	// fmt.Println(c.PostFormArray("Payload"))
 	var ids []Identity
 	json.Unmarshal([]byte(c.PostForm("Payload")), &ids)
-	fmt.Println(ids[0].UserID)
+	mm, _ := json.Marshal(ids[0])
+	var cc jwt.MapClaims
+	json.Unmarshal(mm, &cc)
+	fmt.Println(cc)
+
+	fmt.Println(ids[0].Email)
 	c.JSON(200, gin.H{
-		"payload": ids,
+		"message": "pong",
 	})
 }
