@@ -1,5 +1,7 @@
 module GoPlayground
 
-go 1.17
+go 1.21.0
 
-require golang.org/x/crypto v0.0.0-20220112180741-5e0467b6c7ce
+require go.uber.org/goleak v1.2.1
+
+require github.com/zimmski/go-leak v0.0.0-20151016212241-a11b0b936d24 // indirect
