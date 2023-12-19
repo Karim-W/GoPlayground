@@ -1,0 +1,9 @@
+syntax = "proto3";
+package ginproto;
+
+option go_package = "./ginproto";
+
+message Request {
+	string name = 1;
+	int32 age = 2;
+}
